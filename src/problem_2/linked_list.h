@@ -37,6 +37,46 @@ public:
         /*
          * TODO: homework
          */
+
+        ListNode<T>* otherCurrent = other_list.head->next;
+        ListNode<T>* current = head;
+
+        while (otherCurrent != nullptr) {
+            current->next = new ListNode<T>(otherCurrent->val);
+            current = current->next;
+            otherCurrent = otherCurrent->next;
+            num_of_element++;
+        }
+
+        /**
+        ListNode<T>* rptr = other_list.head;
+        ListNode<T>* ptr = new ListNode<T>;
+        ptr->val = rptr->val;
+        head = ptr;
+        for ( ListNode<T>* rptr = rptr->next; rptr != NULL; rptr = rptr->next ) {
+            ptr->next = new ListNode<T>;
+            ptr->next->val = rptr->val;
+            ptr = ptr->next;
+        }
+         **/
+
+        /**
+        ListNode<T>* current = head;
+
+        // traverse the other list and copy each node
+        ListNode<T>* otherCurrent = other_list.head;
+        while (otherCurrent->next != nullptr) {
+            otherCurrent = otherCurrent->next;
+            current->next = new ListNode(otherCurrent->val);
+            current = current->next;
+        }
+
+        // remove the dummy head node
+        ListNode<T>* temp = head;
+        head = head->next;
+        delete temp;
+        **/
+
     }
 
     // destructor

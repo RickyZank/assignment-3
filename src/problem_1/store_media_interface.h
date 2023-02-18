@@ -21,13 +21,16 @@ public:
         /*
          * TODO: homework
          */
+        return (get_inventory_id() % 13 == 0);
     }
 
     bool operator==(const StoreMediaInterface &other_media) const {
         /*
          * TODO: homework
          */
-        return false;
+        return other_media.inventory_id == this->inventory_id;
+
+        //return false;
     };
 
     bool operator!=(const StoreMediaInterface &other_media) const {
